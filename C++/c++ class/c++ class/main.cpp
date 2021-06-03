@@ -49,5 +49,8 @@ int main(int argc, const char * argv[]) {
     cout << obj2.mathsMarks << endl;
     cout << obj2.phyMarks << endl;
     
+    char sample[] = "GeekForGeek";
+    cout << sample << "-A computer science portal for geeks";
+    
     return 0;
 }
