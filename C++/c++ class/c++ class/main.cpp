@@ -19,9 +19,18 @@ public:
     Marks() {
         ++studentNumber;
     }
+    
+   void trySomething(){
+        
+    }
 };
 
 int Marks::studentNumber = 0;
+
+void findSize (int arr[]) {
+    cout <<sizeof(arr)<<endl;//指针占用八个字节
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     
@@ -50,7 +59,12 @@ int main(int argc, const char * argv[]) {
     cout << obj2.phyMarks << endl;
     
     char sample[] = "GeekForGeek";
-    cout << sample << "-A computer science portal for geeks";
+    cout << sample << "-A computer science portal for geeks"<<endl;
+    
+    
+    int a[10];
+    cout <<sizeof(a)<<endl;//数组大小有数组元素个数和数组元素所占内存大小决定
+    findSize(a);
     
     return 0;
 }
