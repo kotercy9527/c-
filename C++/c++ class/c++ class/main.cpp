@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
     cout <<sizeof(a)<<endl;//数组大小有数组元素个数和数组元素所占内存大小决定
     findSize(a);
     
-
+/*
     string str;
     getline(cin, str);//监听键盘输入的字符串
     cout <<"the initial string is "<<endl;
@@ -79,7 +79,14 @@ int main(int argc, const char * argv[]) {
     str.pop_back();//删除字符串最后面的字节
     // Displaying string
      cout << "The string after pop_back operation is : ";
-     cout << str << endl;
+     cout << str << endl;*/
+    
+    string str = "geeksforgeeks is for geeks";
+    cout << "the initial string is:"<<endl;
+    cout << str << endl;
+    str.resize(13);
+    cout << "The string after resize operation is : ";
+    cout << str << endl;
     
     return 0;
 }
