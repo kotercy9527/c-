@@ -33,6 +33,22 @@ void findSize (int arr[]) {
     cout <<sizeof(arr)<<endl;//指针占用八个字节
 }
 
+class Test {
+    int a;
+public:
+    Test(){
+        a = 1;
+    }
+    void func (int a) {
+        cout << a<<endl;
+        
+    }
+    
+    void func1 (int a) {
+        cout << this->a<<endl;//这里用->操作符的原因是当前对象是一个指针，如果是不是指针，而是类似结构体，那么就要使用.语法
+    }
+};
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     
@@ -87,6 +103,11 @@ int main(int argc, const char * argv[]) {
     str.resize(13);
     cout << "The string after resize operation is : ";
     cout << str << endl;
+    
+    Test obj;
+    int k = 3;
+    obj.func(k);//打印的是形参
+    obj.func1(k);//打印的是对象本身的值
     
     return 0;
 }
