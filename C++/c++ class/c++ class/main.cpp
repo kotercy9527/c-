@@ -6,6 +6,8 @@
 //
 
 #include <iostream>
+#include "Person.hpp"
+
 using namespace std;
 
 class Marks {
@@ -65,6 +67,19 @@ int main(int argc, const char * argv[]) {
     int a[10];
     cout <<sizeof(a)<<endl;//数组大小有数组元素个数和数组元素所占内存大小决定
     findSize(a);
+    
+
+    string str;
+    getline(cin, str);//监听键盘输入的字符串
+    cout <<"the initial string is "<<endl;
+    cout<<"str"<<endl;
+    str.push_back('s');//在字符串末尾添加s
+    cout << "The string after push_back operation is : ";
+      cout << str << endl;
+    str.pop_back();//删除字符串最后面的字节
+    // Displaying string
+     cout << "The string after pop_back operation is : ";
+     cout << str << endl;
     
     return 0;
 }
