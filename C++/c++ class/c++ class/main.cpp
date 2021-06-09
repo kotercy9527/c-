@@ -109,5 +109,11 @@ int main(int argc, const char * argv[]) {
     obj.func(k);//打印的是形参
     obj.func1(k);//打印的是对象本身的值
     
+    
+    const char *color[4] = {"Blue","Red","Orige","Yellow"};
+    for (int i = 0; i < 4; i++) {
+        std::cout <<color[i]<<"\n";
+//        cout <<color[i]<<"\n";
+    }
     return 0;
 }
