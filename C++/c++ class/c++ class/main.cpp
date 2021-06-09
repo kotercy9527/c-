@@ -13,6 +13,23 @@ using namespace std;
 int sum(int a , int b ,int c = 0,int d = 0) {
     return a + b + c + d;
 }
+void swap (int a, int b) {
+    int c = a;
+    a = b;
+    b = c;
+}
+
+void swapInf (int &first,int &second) {
+    int temp = first;
+       first = second;
+       second = temp;
+}
+
+void swapP (int *first,int *second) {
+    int t = *first;
+    *first = *second;
+    *second = t;
+}
 
 class Marks {
 public:
@@ -122,6 +139,21 @@ int main(int argc, const char * argv[]) {
     
     cout << sum(20,20)<<endl;
     cout << sum(10, 20,20,40)<<endl;
+    
+    int e = 100;
+    int f = 200;
+    swap(e,f);
+    cout<<e<<"\n"<<f<<endl;
+    
+    int h = 10;
+    int i = 20;
+    swapInf(h,i);
+    cout<<h<<"\n"<<i<<endl;
+    
+    int j = 11;
+    int l = 12;
+    swapP(&j, &l);
+    cout<<j<<"\n"<<l<<endl;
     
     return 0;
 }
