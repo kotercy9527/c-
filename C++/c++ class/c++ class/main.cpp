@@ -10,6 +10,10 @@
 
 using namespace std;
 
+int sum(int a , int b ,int c = 0,int d = 0) {
+    return a + b + c + d;
+}
+
 class Marks {
 public:
     static int studentNumber;
@@ -115,5 +119,11 @@ int main(int argc, const char * argv[]) {
         std::cout <<color[i]<<"\n";
 //        cout <<color[i]<<"\n";
     }
+    
+    cout << sum(20,20)<<endl;
+    cout << sum(10, 20,20,40)<<endl;
+    
     return 0;
 }
+
+
