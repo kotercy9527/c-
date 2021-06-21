@@ -16,14 +16,21 @@ public:
         
     }
 };
+/*
+Public mode: If we derive a sub class from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in derived class.
 
-class Child: public Parent {//注意继承的语法
+Protected mode: If we derive a sub class from a Protected base class. Then both public member and protected members of the base class will become protected in derived class.
+ 
+Private mode: If we derive a sub class from a Private base class. Then both public member and protected members of the base class will become Private in derived class.
+ */
+class Child: public Parent {//注意继承的语法,这里的public 可以用其他关键字替换
 public:
     int id_c;
     void childTestFunc (){
         
     }
 };
+
 
 int main(int argc, const char * argv[]) {
     Child obj1;
