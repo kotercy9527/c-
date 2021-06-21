@@ -9,10 +9,11 @@
 using namespace std;
 class Person {
     char name[20];
-    int id;
+    
     
 public:
     int age;
+    int id;
     void getDetails(){
         
     };
@@ -34,6 +35,16 @@ public:
     
     //在类当中没有方法实现，而在类外部可以实现方法;
     void printName();
+    
+    //默认的构造方法
+    Person () {
+        id = -1;
+    }
+    
+    //参数构造方法
+    Person (int x) {
+        id = x;
+    }
     
 };
 
@@ -58,5 +69,14 @@ int main(int argc, const char * argv[]) {
     cout << pl3.age << endl;
     
     pl3.printName();
+    
+    Person obj1;
+    cout << "obj1 id is: " <<obj1.id << endl;
+    
+    Person obj2(10);
+    cout << "obj2 id is: " <<obj2.id << endl;
+    
+    Person obj3 (obj2);//拷贝构造函数，这里的obj2和参数构造函数一样，也要用括号括起来哦
+    cout << "obj3 id is: " <<obj3.id << endl;
     return 0;
 }
