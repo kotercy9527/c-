@@ -32,6 +32,28 @@ public:
 };
 
 
+class Base {
+public:
+    virtual void print (){
+        cout<< "print base class" <<endl;
+    }
+    
+    void show(){
+        cout<< "show base class" <<endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void print(){//这里的print函数已经是带了virtual关键字修饰的了，也可以用virtual print ()来显式声明
+        cout<< "print derived class" <<endl;
+    }
+    
+    void show(){
+        cout<< "show derived class" <<endl;
+    }
+};
+
 int main(int argc, const char * argv[]) {
     Child obj1;
     obj1.id_p  = 7;//获得父类的属性，
@@ -39,5 +61,12 @@ int main(int argc, const char * argv[]) {
     cout << "Child id is " <<  obj1.id_c << endl;
     cout << "Parent id is " <<  obj1.id_p << endl;
     obj1.personTestFunc();//获得父类公开的方法
+    
+    Base *bptr;//指针
+    Derived d;
+    bptr = &d;
+    
+    bptr->print();//虚函数，在运行时间绑定 --print derived class
+    bptr->show();//实函数，载编译时绑定 -- show base class
     return 0;
 }
