@@ -114,6 +114,18 @@ private:
     A a;
 };
 
+class Destructor {
+    //析构函数私有
+public:
+    int a;
+    Destructor() {
+        a = 100;
+    }
+private:
+    ~Destructor() {
+        
+    };
+};
 int main(int argc, const char * argv[]) {
     Child obj1;
     obj1.id_p  = 7;//获得父类的属性，
@@ -147,5 +159,11 @@ int main(int argc, const char * argv[]) {
      有重新构造方法，会先调用父类构造方法，再调用自身的构造方法
      如果类本身有其他类的成员，会先调用属性的构造方法，然后调用自己的构造方法
      */
+    
+//    Destructor t;错误：Variable of type 'Destructor' has private destructor
+    //Destructor *t;//The above program works fine. There is no object being constructed, the program just creates a pointer of type “Destructor *”, so nothing is destructed.
+    Destructor* t = new Destructor;//因为内存分配堆区，内存由程序员自己管理，所以不会报错：https://www.geeksforgeeks.org/private-destructor/
+    
+    
     return 0;
 }
