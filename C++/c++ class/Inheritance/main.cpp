@@ -54,6 +54,31 @@ public:
     }
 };
 
+class Point {
+private:
+    int x;
+    int y;
+public:
+    Point(int x1,int y1) {
+        x = x1;
+        y = y1;
+    }
+    
+    Point(Point &p) {
+        x = p.x;
+        y = p.y;
+    }
+    
+    int getX(){
+        return x;
+    }
+    
+    int getY(){
+        return y;
+    }
+    
+};
+
 int main(int argc, const char * argv[]) {
     Child obj1;
     obj1.id_p  = 7;//获得父类的属性，
@@ -68,5 +93,9 @@ int main(int argc, const char * argv[]) {
     
     bptr->print();//虚函数，在运行时间绑定 --print derived class
     bptr->show();//实函数，载编译时绑定 -- show base class
+    
+    Point p(10,20);
+   Point p1 = p;
+    
     return 0;
 }
