@@ -79,6 +79,41 @@ public:
     
 };
 
+class Original {
+public:
+    //compiler "declares" constructor;
+};
+
+class A {
+public:
+    A() {
+        cout << "A Constructor" << endl;
+    }
+    
+    int size;
+};
+
+class B : public A {
+    
+};
+
+class C :public A {
+public:
+    C(){
+        cout << "C Constructor" << endl;
+    }
+};
+
+class D {
+public:
+    D(){
+        cout << "D Constructor" << endl;
+    };
+    
+private:
+    A a;
+};
+
 int main(int argc, const char * argv[]) {
     Child obj1;
     obj1.id_p  = 7;//获得父类的属性，
@@ -97,5 +132,20 @@ int main(int argc, const char * argv[]) {
     Point p(10,20);
    Point p1 = p;
     
+    Original original;
+    B b;
+    C c;
+    D de;
+    /*打印的结果如下
+    A Constructor
+    A Constructor
+    C Constructor
+    A Constructor
+    D Constructor
+     构建对象时
+     没有重写构造方法，会调用父类的构造方法
+     有重新构造方法，会先调用父类构造方法，再调用自身的构造方法
+     如果类本身有其他类的成员，会先调用属性的构造方法，然后调用自己的构造方法
+     */
     return 0;
 }
