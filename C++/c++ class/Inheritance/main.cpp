@@ -164,6 +164,45 @@ int main(int argc, const char * argv[]) {
     //Destructor *t;//The above program works fine. There is no object being constructed, the program just creates a pointer of type “Destructor *”, so nothing is destructed.
     Destructor* t = new Destructor;//因为内存分配堆区，内存由程序员自己管理，所以不会报错：https://www.geeksforgeeks.org/private-destructor/
     
+    /*
+     try: represent a block that can throw an exception
+     catch:represent a block of code that is executed when a particular exception is throw
+     throw:used to throw an exception,Also used to list the exceptions that a function throws,but does not handle itself
+     */
+    int x = -1;
+    cout << "Before try \n";
+    try {
+        cout << "Inside try \n";
+        if (x < 0) {
+            throw x;
+        }
+    } catch (int x) {
+        cout << "Exception Caught \n";
+    }
+    cout << "After catch (Will be executed) \n";
+    
+    
+    try {
+        throw 10;
+    } catch (char *excp) {
+        cout << "Caught" <<excp;
+    }
+    
+    catch(...) {//能捕捉所有的异常
+        cout << "Default Exception \n";
+    }
+    
+    //如果跑出一个异常，没有catch语句抓住这个异常，那么程序就会crash
+    try {
+        throw 'a';
+    } catch (int x) {
+        cout << "Caught";
+    }
+    catch(char a) {
+        cout << "i have catch a new exception";
+    }
+    
+    //
     
     return 0;
 }
