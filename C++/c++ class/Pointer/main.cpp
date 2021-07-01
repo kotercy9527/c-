@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 class Person {
-    char name[20];
+    char name[20];//默认情况是Private
     
     
 public:
@@ -29,7 +29,7 @@ public:
     //操作符重载
     Person operator+(Person p) {
         Person q;
-        q.age = this->age + p.age;
+        q.age = age + p.age;
         return q;
     };
     
@@ -57,7 +57,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
 
     Person pl;
-   int a =  pl.sum(1, 2);
+    int a =  pl.sum(1, 2);
     int b = pl.sum(1, 2, 3);
     cout << a << "------" << b << endl;
     

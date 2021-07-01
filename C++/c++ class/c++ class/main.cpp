@@ -121,7 +121,7 @@ int main(int argc, const char * argv[]) {
     string str = "geeksforgeeks is for geeks";
     cout << "the initial string is:"<<endl;
     cout << str << endl;
-    str.resize(13);
+    str.resize(13);//取字符串的前13个字符
     cout << "The string after resize operation is : ";
     cout << str << endl;
     
