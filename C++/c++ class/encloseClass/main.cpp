@@ -14,13 +14,14 @@ class Tyre {
 public:
     Tyre(int radius,int width);
     void show() const;
+    static int num;//静态成员变量，属于类，不属于任何对象
 private:
     int m_radius;
     int m_width;
 };
 
 Tyre::Tyre(int radius,int width):m_radius(radius),m_width(width) {
-
+  
 }
 
 void Tyre::show () const {
@@ -51,7 +52,7 @@ public:
     Car(int price,int radius,int width);
     void show()const;
     
-private:
+//private:
     int m_price;
     Tyre m_tyre;
     Engine m_engine;
@@ -61,6 +62,7 @@ Car::Car(int price,int radius,int width):m_price(price),m_tyre(Tyre(radius, widt
     
 }
 
+int Tyre::num;//
 void Car::show() const {
     cout << "价格：" << this->m_price << "￥" << endl;
     this->m_tyre.show();
@@ -70,5 +72,6 @@ void Car::show() const {
 int main(int argc, const char * argv[]) {
     Car car(100000,100,200);
     car.show();
+    car.m_tyre.num = 100;
     return 0;
 }
