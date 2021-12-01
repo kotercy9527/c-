@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 
 1
 this is a line add in branch
+=======
+this is a line add in branch
+第二次提交
+>>>>>>> 9f116b4 (22)
